@@ -1,0 +1,6 @@
+
+Minetest Developer Wiki
+http://dev.minetest.net
+
+Minetest Modding Online Tutorial Book
+https://rubenwardy.com/minetest_modding_book
