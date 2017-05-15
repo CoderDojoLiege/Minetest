@@ -17,7 +17,7 @@ minetest.register_craft({
 
 -- Event Handlers --
 
-function on_condenser_construct(pos, water)
+local function on_condenser_construct(pos, water)
 	local meta = minetest.get_meta(pos)
 	meta:set_int("water", water)
 	local enabled = "true"
@@ -27,7 +27,7 @@ function on_condenser_construct(pos, water)
 	meta:set_string("enabled", enabled)
 end
 
-function on_condenser_rightclick(pos, node, player, itemstack, pointed_thing)
+local function on_condenser_rightclick(pos, node, player, itemstack, pointed_thing)
 	local meta = minetest.get_meta(pos)
 	local enabled = meta:get_string("enabled")
 	if enabled == "false" then
@@ -43,7 +43,7 @@ function on_condenser_rightclick(pos, node, player, itemstack, pointed_thing)
 	minetest.chat_send_player(player:get_player_name(), "Condenser : "..str_enabled)
 end
 
-function on_condenser_punch(pos, node, player, pointed_thing)
+local function on_condenser_punch(pos, node, player, pointed_thing)
 	local meta = minetest.get_meta(pos)
 	local water = meta:get_int("water")
 	if water > 0 then
