@@ -1,18 +1,15 @@
 local water_generation_delay_in_seconds = 3.0
 
 -- Recipes --
--- TODO : Make a coherent "real" recipe
 
 minetest.register_craft({
-	type = "shapeless",
+	type = "shaped",
 	output = "condenser:condenser",
-	recipe = {"default:sand"}
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "condenser:condenser",
-	recipe = {"default:dirt"}
+	recipe = {
+		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"},
+		{"default:steel_ingot", "bucket:bucket_empty", "default:steel_ingot"},
+		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"}
+	}
 })
 
 -- Event Handlers --
